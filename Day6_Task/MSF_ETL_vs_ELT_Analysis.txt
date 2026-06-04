@@ -1,0 +1,76 @@
+MSF Field Operations Data Platform – ETL vs ELT Decision
+
+Scenario
+Médecins Sans Frontières (MSF) operates humanitarian medical programs in more than 70 countries. The organization wants to consolidate patient intake forms, drug inventory logs, outbreak reports, and staff deployment records from approximately 400 field sites into a centralized analytics platform in BigQuery for use by the Geneva headquarters team.
+
+Question
+Which pipeline architecture should be selected: ETL or ELT? Justify the decision using the given constraints.
+
+Dimensions Considered
+
+1. Infrastructure
+- Headquarters recently migrated to BigQuery on Google Cloud.
+- Field sites have intermittent internet connectivity.
+- Data is uploaded as daily batch CSV files.
+- No real-time streaming capability is available.
+
+Assessment:
+Since data arrives in daily batches, there is no requirement to load raw data immediately and transform later. ETL is suitable for batch-oriented workloads.
+
+2. Patient Data Sensitivity
+- Records contain patient names, ages, diagnoses, and GPS coordinates.
+- Exposure of this information could endanger patients and staff.
+- Full anonymization is required before data enters the central platform.
+
+Assessment:
+This is the most important factor. ETL allows sensitive data to be anonymized, masked, validated, and secured before loading into BigQuery. ELT would load raw sensitive data first, increasing privacy and compliance risks.
+
+3. Analytics Requirements
+- Analysts need ad-hoc queries for outbreak trends, drug forecasting, and staffing analysis.
+- Reporting requirements change frequently.
+- No fixed reporting schema exists.
+
+Assessment:
+This factor slightly favors ELT because ELT provides flexibility for analysts to transform data later. However, this benefit is outweighed by the strict security requirements.
+
+4. Data Format
+- Each field site uses slightly different forms.
+- Column names and date formats vary.
+- Some sites use local-language labels.
+- Raw CSV files cannot be analyzed directly without standardization.
+
+Assessment:
+Data requires significant cleaning and normalization before it becomes usable. ETL is better because transformation occurs before loading.
+
+5. Latency Tolerance
+- Outbreak alerts can tolerate up to 24 hours of delay.
+- Drug inventory forecasting runs weekly.
+- No use case requires real-time analytics.
+
+Assessment:
+Since low latency is not required, there is no advantage in using ELT. ETL batch processing is sufficient.
+
+Comparison
+
+ETL (Extract → Transform → Load)
+- Data is transformed before loading.
+- Sensitive information can be anonymized before storage.
+- Ensures high data quality.
+- Better governance and compliance.
+- Ideal for inconsistent source formats.
+
+ELT (Extract → Load → Transform)
+- Raw data is loaded first.
+- Transformations occur inside the data warehouse.
+- Good for large-scale analytics and flexible exploration.
+- Creates security concerns when sensitive data must not be stored in raw form.
+
+Final Decision:
+
+Recommended Pipeline: ETL
+
+Justification:
+MSF handles highly sensitive patient and operational data. The organization requires anonymization before data reaches BigQuery, receives inconsistent CSV files from 400 field locations, and does not need real-time processing. ETL enables data cleansing, standardization, validation, and anonymization before loading, making it the safest and most appropriate architecture.
+
+Final Answer:
+ETL should be selected because patient data must be anonymized before entering the central platform, data from field sites requires normalization, and the business can tolerate batch processing. ETL provides stronger security, compliance, and data quality controls than ELT for this use case.

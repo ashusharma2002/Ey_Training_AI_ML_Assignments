@@ -1,0 +1,23 @@
+artifact_path: file:c:/Users/Administrator/Desktop/EY-Traning Task/Ey_Training_AI_ML_Assignments/Day3_Task/mlruns/1/models/m-aef668cabac8435c90755d2dcbd5272c/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.14.5
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.13.0
+model_id: m-aef668cabac8435c90755d2dcbd5272c
+model_size_bytes: 127534
+model_uuid: m-aef668cabac8435c90755d2dcbd5272c
+prompts: null
+run_id: 61a9a3abb9b54debab861a4ab487cbfd
+utc_time_created: '2026-06-04 05:57:34.750240'
