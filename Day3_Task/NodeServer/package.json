@@ -1,0 +1,12 @@
+{
+  "name": "day3-nodeserver",
+  "version": "1.0.0",
+  "description": "Simple Node.js server for Day3 task",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
