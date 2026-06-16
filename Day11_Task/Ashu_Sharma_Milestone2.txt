@@ -1,0 +1,374 @@
+Document Summarization API Assignment
+
+----SECTION A — ARCHITECTURE BRIEF----
+
+
+---A1. Service Description---
+
+The Document Summarization API is a FastAPI-based microservice that generates 
+summaries from user-provided text using a Large Language Model (LLM).
+A client sends a POST request to the /summarize endpoint containing the text and
+the desired summary style (brief or detailed). The request first passes through
+middleware, which generates a request ID, measures latency, and updates Prometheus metrics. 
+Next, Pydantic validates the request payload. After successful validation, the service 
+constructs a style-specific prompt and sends it to the configured LLM provider 
+(OpenAI in this implementation). The LLM generates a summary, which is returned as 
+a structured JSON response. A design trade-off in this implementation is using synchronous
+LLM calls instead of background processing. This keeps the architecture simple and easier 
+to understand but may increase response time for large inputs or high traffic workloads.
+
+
+
+----SECTION B — CONFIG FILE AND LOADER----
+
+
+---B1. config.yaml---
+
+service_name: document-summarizer
+port: 8000
+log_level: INFO
+
+llm:
+  provider: openai
+  model: gpt-4o-mini
+  max_tokens: 300
+
+
+---B2. Pydantic Configuration Models and Loader---
+
+from typing import Literal
+from pydantic import BaseModel
+import yaml
+
+
+class LLMConfig(BaseModel):
+    provider: Literal["openai", "azure_openai", "anthropic"]
+    model: str
+    max_tokens: int
+
+
+class AppConfig(BaseModel):
+    service_name: str
+    port: int
+    log_level: Literal["DEBUG", "INFO", "WARNING", "ERROR"]
+    llm: LLMConfig
+
+
+def load_config(path: str) -> AppConfig:
+    with open(path, "r") as file:
+        data = yaml.safe_load(file)
+
+    return AppConfig.model_validate(data)
+
+
+
+----SECTION C — REQUEST / RESPONSE SCHEMAS----
+
+
+---C1. Request and Response Models---
+
+from typing import Literal
+from pydantic import BaseModel, Field
+
+
+class SummariseRequest(BaseModel):
+    text: str = Field(..., min_length=20)
+    style: Literal["brief", "detailed"]
+
+
+class SummariseResponse(BaseModel):
+    summary: str
+    model: str
+    input_chars: int
+
+
+
+-----SECTION D — FASTAPI APP WITH /summarize ENDPOINT-----
+
+
+--D1. FastAPI Application--
+
+from contextlib import asynccontextmanager
+from fastapi import FastAPI
+from openai import OpenAI
+
+config = load_config("config.yaml")
+client = OpenAI()
+
+ready = False
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    global ready
+
+    app.state.config = config
+    ready = True
+
+    yield
+
+    ready = False
+
+
+app = FastAPI(
+    title="Document Summarizer API",
+    lifespan=lifespan
+)
+
+
+@app.post(
+    "/summarize",
+    response_model=SummariseResponse
+)
+async def summarize(request: SummariseRequest):
+
+    if request.style == "brief":
+        prompt = f'''
+        Summarize the following text into exactly 2 bullet points.
+        Each bullet point should contain at most 20 words.
+
+        Text:
+        {request.text}
+        '''
+    else:
+        prompt = f'''
+        Summarize the following text in 3 detailed paragraphs.
+
+        Text:
+        {request.text}
+        '''
+
+    response = client.chat.completions.create(
+        model=config.llm.model,
+        max_tokens=config.llm.max_tokens,
+        messages=[
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    )
+
+    summary = response.choices[0].message.content
+
+    return SummariseResponse(
+        summary=summary,
+        model=config.llm.model,
+        input_chars=len(request.text)
+    )
+
+
+---Request Flow---
+
+Client Request
+      |
+      v
+Middleware
+      |
+      v
+Pydantic Validation
+      |
+      v
+Prompt Builder
+      |
+      v
+OpenAI LLM
+      |
+      v
+Summary Generated
+      |
+      v
+JSON Response
+
+
+----SECTION E — MIDDLEWARE + METRICS + HEALTH/READY----
+
+
+---E1. Logging Middleware and Prometheus Metrics---
+
+import time
+import uuid
+import logging
+
+from fastapi import Request
+from prometheus_client import Counter
+
+
+REQUEST_COUNT = Counter(
+    "request_count_total",
+    "Total API Requests",
+    ["method", "path"]
+)
+
+
+@app.middleware("http")
+async def logging_middleware(request: Request, call_next):
+
+    request_id = str(uuid.uuid4())
+
+    start_time = time.time()
+
+    response = await call_next(request)
+
+    duration_ms = round(
+        (time.time() - start_time) * 1000,
+        2
+    )
+
+    REQUEST_COUNT.labels(
+        method=request.method,
+        path=request.url.path
+    ).inc()
+
+    logging.info(
+        f"request_id={request_id} "
+        f"method={request.method} "
+        f"path={request.url.path} "
+        f"status_code={response.status_code} "
+        f"duration_ms={duration_ms}"
+    )
+
+    return response
+
+
+----E2. Health, Readiness and Metrics Endpoints----
+
+from fastapi import Response
+from prometheus_client import (
+    generate_latest,
+    CONTENT_TYPE_LATEST
+)
+
+
+@app.get("/healthz")
+async def healthz():
+    return {"status": "alive"}
+
+
+@app.get("/readyz")
+async def readyz():
+
+    if ready:
+        return {"status": "ready"}
+
+    return Response(
+        content='{"status":"not ready"}',
+        status_code=503,
+        media_type="application/json"
+    )
+
+
+@app.get("/metrics")
+async def metrics():
+    return Response(
+        content=generate_latest(),
+        media_type=CONTENT_TYPE_LATEST
+    )
+
+
+---Monitoring Flow---
+
+Incoming Request
+      |
+      v
+Generate Request ID
+      |
+      v
+Start Timer
+      |
+      v
+Process Request
+      |
+      v
+Calculate Latency
+      |
+      v
+Increment Prometheus Counter
+      |
+      v
+Write Log Entry
+      |
+      v
+Return Response
+
+
+
+----SECTION F — PYTEST TESTS----
+
+
+---F1. Unit Tests with Mocked LLM Client---
+
+from fastapi.testclient import TestClient
+from unittest.mock import patch, MagicMock
+
+from main import app
+
+client = TestClient(app)
+
+
+@patch("main.client.chat.completions.create")
+def test_summarize_happy_path_with_mocked_llm(mock_create):
+
+    mock_response = MagicMock()
+
+    mock_response.choices = [
+        MagicMock(
+            message=MagicMock(
+                content="Mocked summary"
+            )
+        )
+    ]
+
+    mock_create.return_value = mock_response
+
+    response = client.post(
+        "/summarize",
+        json={
+            "text": "This is a sufficiently long text used for testing the summarization endpoint.",
+            "style": "brief"
+        }
+    )
+
+    assert response.status_code == 200
+    assert response.json()["summary"] == "Mocked summary"
+
+
+def test_summarize_invalid_style_returns_422():
+
+    response = client.post(
+        "/summarize",
+        json={
+            "text": "This is a sufficiently long text used for validation testing.",
+            "style": "unknown"
+        }
+    )
+
+    assert response.status_code == 422
+
+
+def test_healthz_returns_200_alive():
+
+    response = client.get("/healthz")
+
+    assert response.status_code == 200
+    assert response.json() == {"status": "alive"}
+
+
+
+-----SECTION G — REFLECTION-----
+
+
+---G1. Reflection---
+
+Building this service demonstrated how API development, configuration management, 
+validation, observability, and LLM integration can be combined into a single 
+production-style application. The overall architecture worked well because each 
+component had a clearly defined responsibility: FastAPI handled routing, Pydantic managed 
+validation, Prometheus provided metrics, and the OpenAI client generated summaries. 
+The most challenging part was designing the service so that it could be tested reliably 
+without making real API calls. Using mocks in pytest solved this problem and enabled fast, 
+repeatable testing. If this service were deployed to production, the MLOps practice 
+I would most strongly recommend keeping is observability through structured logging, 
+metrics collection, and health/readiness probes. These features provide visibility into 
+system behavior, simplify troubleshooting, support monitoring systems, and greatly improve 
+operational reliability and maintainability.
