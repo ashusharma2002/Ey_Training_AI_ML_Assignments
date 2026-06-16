@@ -6,3 +6,26 @@ results/*.csv
 results/*.png
 results/*.json
 .DS_Store
+
+# Large datasets / archives
+/Day10_Task/data/cifar-10-python.tar.gz
+/Day10_Task/data/
+**/data/
+
+# Common large binary/model/archive file types
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.ckpt
+*.pt
+*.pth
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# OS / Python artifacts
+.pytest_cache/
+build/
+dist/
