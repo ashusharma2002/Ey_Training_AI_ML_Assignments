@@ -1,0 +1,14 @@
+[
+  {
+    "prompt_type": "zero_shot_summary",
+    "prompt": "Summarize the following earnings call transcript in 2-3 concise bullet points."
+  },
+  {
+    "prompt_type": "few_shot_summary",
+    "prompt": "Example transcript and summary provided before summarizing the earnings call."
+  },
+  {
+    "prompt_type": "ticket_classifier",
+    "prompt": "Classify the ticket into Billing, Tech, Refund, General, or Escalate and provide reasoning."
+  }
+]

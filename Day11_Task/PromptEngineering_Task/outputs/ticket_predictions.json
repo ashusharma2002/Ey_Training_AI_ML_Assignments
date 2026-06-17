@@ -1,0 +1,22 @@
+[
+    {
+        "ticket": "I was charged twice for my subscription this month.",
+        "prediction": "Category: 1. Billing\n\nReason:\nThe customer is reporting an issue with being charged twice for their subscription, which is directly related to their billing and payment. This indicates a potential error or discrepancy in their account charges, making it a billing-related issue."
+    },
+    {
+        "ticket": "The application crashes every time I try to login.",
+        "prediction": "Category: 2\n\nReason: The issue described in the ticket is related to a technical problem with the application, specifically a crash occurring during the login process, which falls under the Tech category.\n\nTicket: The application crashes every time I try to login."
+    },
+    {
+        "ticket": "I would like a refund because I accidentally purchased the wrong plan.",
+        "prediction": "Category: 3\n\nReason: The customer is requesting a refund due to an incorrect purchase, which directly relates to returning or reversing a payment, making it a refund-related issue.\n\nTicket: I would like a refund because I accidentally purchased the wrong plan."
+    },
+    {
+        "ticket": "How can I update my profile information?",
+        "prediction": "Category: 2. Tech\n\nReason: The customer is inquiring about updating their profile information, which is a technical aspect of the platform or website, requiring assistance with navigation or functionality.\n\nTicket: How can I update my profile information?"
+    },
+    {
+        "ticket": "My issue has not been resolved for three weeks and I need immediate assistance.",
+        "prediction": "Category: Escalate\n\nReason: The customer's issue has been ongoing for an extended period (three weeks) and they are requesting immediate assistance, indicating a need for urgent attention and potentially a more senior or specialized support agent to resolve the issue."
+    }
+]

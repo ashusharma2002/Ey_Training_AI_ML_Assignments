@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "transcript": "Revenue increased by 18 percent year over year. Operating margin improved to 22 percent. Management expects strong demand next quarter due to increased enterprise adoption.",
+        "reference_summary": "Revenue and margins improved significantly, and management expects continued growth driven by enterprise demand.",
+        "zero_shot_summary": "As a financial analyst, here are 3 concise bullet points summarizing the earnings call transcript:\n\n* Revenue grew 18% year-over-year, indicating a significant increase in sales.\n* Operating margin improved to 22%, suggesting enhanced operational efficiency and profitability.\n* Management expects continued strong demand in the next quarter, driven by increased adoption among enterprise customers.",
+        "few_shot_summary": "Here is a summary of the transcript in 3 concise bullet points:\n\n* Revenue increased by 18 percent year over year.\n* Operating margin improved to 22 percent.\n* Strong demand is expected next quarter due to increased enterprise adoption."
+    },
+    {
+        "id": 2,
+        "transcript": "Cloud revenue grew 25 percent. Customer retention reached 96 percent. Two new AI products were launched and received positive customer feedback.",
+        "reference_summary": "Cloud business expanded strongly, retention remained high, and new AI products were successfully launched.",
+        "zero_shot_summary": "As a financial analyst, here are the key takeaways from the earnings call transcript:\n\n* Cloud revenue experienced significant growth, increasing by 25% year-over-year.\n* Customer retention rates remained high, reaching 96%, indicating strong customer satisfaction and loyalty.\n* The company successfully launched two new AI products, which received positive feedback from customers, potentially driving future revenue growth.",
+        "few_shot_summary": "Here is a summary of the transcript in 3 concise bullet points:\n\n* Cloud revenue increased significantly.\n* Customer retention rates were high.\n* New AI products were successfully launched."
+    },
+    {
+        "id": 3,
+        "transcript": "Net profit increased 12 percent. International expansion continued across Asia-Pacific markets. The company raised guidance for the next quarter.",
+        "reference_summary": "Profit increased, international growth continued, and management improved future guidance.",
+        "zero_shot_summary": "As a financial analyst, here are the key takeaways from the earnings call transcript:\n\n* Net profit saw a 12% increase, indicating a strong financial performance.\n* The company successfully expanded its presence in international markets, specifically in the Asia-Pacific region.\n* Guidance for the next quarter has been raised, suggesting management's confidence in continued growth and improved outlook.",
+        "few_shot_summary": "Here is a summary of the transcript in 3 concise bullet points:\n\n* Net profit increased.\n* International expansion efforts continued.\n* Guidance for the next quarter was raised."
+    }
+]
