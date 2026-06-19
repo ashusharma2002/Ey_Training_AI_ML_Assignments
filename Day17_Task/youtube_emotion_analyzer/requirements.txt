@@ -1,0 +1,22 @@
+# YouTube Emotion Analyzer — Python dependencies
+# Install with: pip install -r requirements.txt
+#
+# Python 3.11 recommended (3.9–3.12 supported)
+
+# ── Core ──────────────────────────────────────────────────────────────────────
+yt-dlp>=2024.1.0            # YouTube video download
+python-dotenv>=1.0.0        # (optional) env loading
+
+# ── Local emotion analysis (no API needed) ───────────────────────────────────
+opencv-python>=4.8.0        # Face / smile / eye detection (face emotions)
+librosa>=0.10.0             # Audio feature extraction (voice emotions)
+vaderSentiment>=3.3.2       # Text sentiment (language emotions)
+numpy>=1.24.0               # Numerical operations
+
+# ── Visualisation ─────────────────────────────────────────────────────────────
+matplotlib>=3.8.0           # PNG chart generation
+
+# ── OPTIONAL: better speech-to-text for language analysis ────────────────────
+# Install separately if you want real speech transcription (large download):
+#   pip install openai-whisper
+# Without it, language analysis falls back to the video title.
