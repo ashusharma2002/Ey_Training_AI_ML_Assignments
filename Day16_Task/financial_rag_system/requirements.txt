@@ -1,0 +1,34 @@
+# Core LangChain stack
+langchain>=0.3
+langchain-community>=0.3
+langchain-openai>=0.2
+langchain-core>=0.3
+langchain-text-splitters>=0.3
+langchain-huggingface>=0.1
+
+# Vector store
+faiss-cpu
+
+# Embeddings & re-ranker
+sentence-transformers
+
+# Azure OpenAI
+openai
+
+# RAG evaluation
+ragas==0.2.10
+
+# Hybrid retrieval (BM25)
+rank_bm25
+
+# Utilities
+python-dotenv
+tqdm
+rich
+pandas
+matplotlib
+seaborn
+tiktoken
+pypdf
+datasets
+numpy
