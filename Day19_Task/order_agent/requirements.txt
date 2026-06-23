@@ -1,0 +1,9 @@
+anthropic>=0.34.0
+fastapi>=0.111.0
+httpx<0.28
+fakeredis>=2.23.0
+python-dotenv>=1.0.0
+pytest>=8.0.0
+
+# Uncomment when REDIS_URL is set in .env (Extension 6)
+# redis>=5.0.0
