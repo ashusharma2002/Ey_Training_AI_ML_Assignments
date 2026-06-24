@@ -1,0 +1,13 @@
+# Day 20 · Observability & Guardrails Toolkit
+# Python dependencies
+#
+# Core — everything else used in the notebook is Python standard library
+# (re, hashlib, uuid, threading, json, dataclasses, pathlib, contextlib, functools)
+
+# Anthropic SDK — for live model calls (optional; mock mode works without it)
+anthropic>=0.25.0
+
+# Jupyter — to run the notebooks locally
+jupyter>=1.0.0
+notebook>=7.0.0
+ipykernel>=6.0.0
