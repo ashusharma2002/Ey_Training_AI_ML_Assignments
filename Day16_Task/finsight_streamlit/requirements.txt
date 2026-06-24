@@ -1,0 +1,31 @@
+# Core LangChain stack
+langchain>=0.3
+langchain-community>=0.3
+langchain-openai>=0.2
+langchain-core>=0.3
+langchain-text-splitters>=0.3
+langchain-huggingface>=0.1
+
+# Vector store
+faiss-cpu
+
+# Embeddings
+sentence-transformers==2.7.0
+transformers==4.57.6
+torch==2.2.0+cpu
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Azure OpenAI
+openai
+
+# Hybrid retrieval
+rank_bm25
+
+# Streamlit
+streamlit>=1.35.0
+
+# Utilities
+python-dotenv
+numpy==1.26.4
+scipy==1.13.1
+pandas

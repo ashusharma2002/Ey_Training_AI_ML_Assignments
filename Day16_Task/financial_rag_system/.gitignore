@@ -1,0 +1,32 @@
+# Credentials — NEVER commit this
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+
+# VS Code
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data & model cache
+*.faiss
+*.pkl
+~/.cache/huggingface/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Outputs
+*.png
+*.csv
