@@ -1,0 +1,18 @@
+{
+  "patient_name": "Arjun Mehta",
+  "dob": "1981-11-23",
+  "mrn": "KMC-20048",
+  "provider": "Dr. Sunita Rao",
+  "facility": "Koramangala Medical Centre, Bengaluru",
+  "complaint": "Chest tightness and shortness of breath for 3 days",
+  "hpi": "45-year-old male, worsening chest tightness on exertion. Non-smoker. Father had MI at 52.",
+  "pmh": "Hypertension (Amlodipine 5mg), Type 2 Diabetes (Metformin 500mg BD)",
+  "vitals": "BP:148/92,HR:88,Temp:36.9,SpO2:97,Weight:84",
+  "allergies": "Penicillin (rash)",
+  "exam_findings": "S1S2 heard, no murmurs. Mild crackles at left base. No pedal oedema.",
+  "assessment": "Angina pectoris, unspecified | ICD-10: I20.9",
+  "secondary_dx": "I10 - Essential hypertension; E11.9 - Type 2 diabetes",
+  "plan": "12-lead ECG stat; Serum Troponin-I at 0h and 6h; Chest X-ray PA; Aspirin 325mg stat then 75mg OD; GTN 0.5mg SL PRN; Continue current meds; Cardiology referral",
+  "follow_up": "Cardiology review within 24 hours",
+  "referral": "Dr. Venkatesh Kumar, Interventional Cardiology"
+}

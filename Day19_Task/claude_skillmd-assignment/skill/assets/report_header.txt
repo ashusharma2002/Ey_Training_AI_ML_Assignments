@@ -1,0 +1,7 @@
+════════════════════════════════════════════════════════
+    CLINICAL PATIENT REPORT  [{status}]
+    {facility_name}
+    Generated : {date}
+    Provider  : {provider_name}
+    CONFIDENTIAL — HIPAA Protected Health Information
+════════════════════════════════════════════════════════

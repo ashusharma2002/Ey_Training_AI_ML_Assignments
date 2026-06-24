@@ -1,0 +1,48 @@
+
+════════════════════════════════════════════════════════
+    CLINICAL PATIENT REPORT  [FINAL]
+    Koramangala Medical Centre, Bengaluru
+    Generated : 2026-06-24
+    Provider  : Dr. Sunita Rao
+    CONFIDENTIAL - HIPAA Protected Health Information
+════════════════════════════════════════════════════════
+
+PATIENT  : Arjun Mehta
+DOB      : 1981-11-23
+MRN      : KMC-20048
+ALLERGIES: Penicillin (rash)
+
+── SUBJECTIVE ───────────────────────────────────────────
+Chief Complaint : Chest tightness and shortness of breath for 3 days
+History (HPI)   : 45-year-old male, worsening chest tightness on exertion. Non-smoker. Father had MI at 52.
+Past Med Hx     : Hypertension (Amlodipine 5mg), Type 2 Diabetes (Metformin 500mg BD)
+
+── OBJECTIVE ────────────────────────────────────────────
+Vital Signs:
+  Blood Pressure : 148/92 mmHg
+  Heart Rate     : 88 bpm
+  Temperature    : 36.9 °C
+  SpO2           : 97 %
+  Weight         : 84 kg
+Physical Exam   : S1S2 heard, no murmurs. Mild crackles at left base. No pedal oedema.
+
+── ASSESSMENT ───────────────────────────────────────────
+Primary Dx : Angina pectoris, unspecified | ICD-10: I20.9
+Secondary  : I10 - Essential hypertension; E11.9 - Type 2 diabetes
+
+── PLAN ─────────────────────────────────────────────────
+  1. 12-lead ECG stat
+  2. Serum Troponin-I at 0h and 6h
+  3. Chest X-ray PA
+  4. Aspirin 325mg stat then 75mg OD
+  5. GTN 0.5mg SL PRN
+  6. Continue current meds
+  7. Cardiology referral
+
+── FOLLOW-UP ────────────────────────────────────────────
+  Return Visit : Cardiology review within 24 hours
+  Referring To : Dr. Venkatesh Kumar, Interventional Cardiology
+
+════════════════════════════════════════════════════════
+    END OF REPORT - Dr. Sunita Rao | 2026-06-24
+════════════════════════════════════════════════════════
