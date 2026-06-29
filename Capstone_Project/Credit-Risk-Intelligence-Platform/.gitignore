@@ -1,0 +1,43 @@
+# Environment — NEVER commit API keys
+.env
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# FAISS index (large binary files)
+data/vectorstore/
+
+# Uploaded documents (user data)
+data/uploads/
+
+# Demo documents (downloaded separately)
+data/demo/*.pdf
+data/demo/*.PDF
+
+# Logs
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Distribution
+dist/
+build/
+*.egg-info/
