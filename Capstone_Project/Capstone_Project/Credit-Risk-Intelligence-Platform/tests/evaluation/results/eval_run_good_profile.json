@@ -1,0 +1,464 @@
+[
+  {
+    "id": "TC01",
+    "category": "factual_extraction",
+    "question": "What is the net salary or take-home salary mentioned in the documents?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe net salary or take-home salary mentioned in the documents is \u20b91,49,900, as per the salary slip for March 2026 from the year that is not explicitly stated but can be inferred as 2026 from the context.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Net Salary (Take Home): \u20b91,49,900\n\u2022 Gross Salary: \u20b91,90,000\n\u2022 Total Deductions: \u20b940,100 (including Provident Fund, Professional Tax, and Income Tax)\n\n\ud83d\udca1 **What This Means For You**\nThis means that after all deductions, you take home \u20b91,49,900 per month. Your gross salary is \u20b91,90,000, but deductions like provident fund, professional tax, and income tax reduce your take-home pay. Understanding your net salary helps you plan your expenses and savings effectively.\n\n\u2705 **What You Can Do Next**\n1. Review your budget to ensure you're allocating your net salary wisely, considering essential expenses, savings, and debt repayments.\n2. Consider consulting a financial advisor to optimize your salary structure and deductions for better financial planning.",
+    "expected_answer": "",
+    "elapsed_seconds": 2.84,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Priya Nair | Employee ID | TST-EMP-2002 | Designation | Senior Manager \u2014 Finance"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Priya Nair | Account Type | Savings | Average Monthly Balance | Rs. 4,20,000"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statement \u2014 Home Loan | Loan Details | Lender | Test Bank Ltd. | Loan Type | Home Loan | Original Amount | Rs. 52,00,000"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 801 | Score Band | Excellent | Total Active Accounts | 3"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:38:20.674919+00:00",
+      "question": "What is the net salary or take-home salary mentioned in the documents?",
+      "faithfulness": 0.8,
+      "answer_relevancy": 1.0,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:38:28.986573+00:00",
+      "question": "What is the net salary or take-home salary mentioned in the documents?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output is fully supported by the provided contexts: the salary amounts, deductions, and March 2026 date match the salary slip, the take-home salary aligns with the bank statement, and there are no contradictions with the loan or credit report details."
+    }
+  },
+  {
+    "id": "TC02",
+    "category": "factual_extraction",
+    "question": "What is the credit score or CIBIL score reported?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe reported credit score or CIBIL score is 801, which falls into the \"Excellent\" score band.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Credit Score (CIBIL): 801\n\u2022 Score Band: Excellent\n\u2022 Total Active Accounts: 3\n\u2022 Credit Card Utilisation: 15%\n\u2022 Payment History: 100% on-time (last 36 months)\n\n\ud83d\udca1 **What This Means For You**\nA credit score of 801 is considered excellent, indicating a good credit history and responsible payment behavior. This score can help you qualify for loans and credit cards at favorable interest rates. Your excellent payment history and moderate credit card utilization also suggest that you manage your debt well.\n\n\u2705 **What You Can Do Next**\n1. Continue maintaining a good payment history to preserve your excellent credit score.\n2. Review your credit report regularly to ensure it remains accurate and up-to-date.",
+    "expected_answer": "",
+    "elapsed_seconds": 3.41,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 801 | Score Band | Excellent | Total Active Accounts | 3"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Priya Nair | Account Type | Savings | Average Monthly Balance | Rs. 4,20,000"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statement \u2014 Home Loan | Loan Details | Lender | Test Bank Ltd. | Loan Type | Home Loan | Original Amount | Rs. 52,00,000"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Priya Nair | Employee ID | TST-EMP-2002 | Designation | Senior Manager \u2014 Finance"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:38:34.179065+00:00",
+      "question": "What is the credit score or CIBIL score reported?",
+      "faithfulness": 0.8,
+      "answer_relevancy": 1.0,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:38:40.425841+00:00",
+      "question": "What is the credit score or CIBIL score reported?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with the provided context on key credit details and there are no contradictions."
+    }
+  },
+  {
+    "id": "TC03",
+    "category": "factual_extraction",
+    "question": "What existing loans or EMIs are mentioned in the documents?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe documents mention a Home Loan with an outstanding balance of \u20b938,50,000 and a monthly EMI of \u20b942,000.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Outstanding Home Loan balance: \u20b938,50,000\n\u2022 Monthly Home Loan EMI: \u20b942,000\n\u2022 Interest Rate: 8.65% p.a.\n\u2022 Tenure Remaining: 14 years\n\n\ud83d\udca1 **What This Means For You**\nThese numbers indicate that you have an ongoing home loan with a significant outstanding balance and a fixed monthly repayment amount. The interest rate and remaining tenure provide context for your loan's terms. This information is essential for managing your finances and planning for the future.\n\n\u2705 **What You Can Do Next**\n1. Review your budget to ensure you can continue making the monthly EMI payments without difficulty.\n2. Consider consulting with a financial advisor to explore options for optimizing your loan repayment or adjusting your overall financial strategy.",
+    "expected_answer": "",
+    "elapsed_seconds": 3.06,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statement \u2014 Home Loan | Loan Details | Lender | Test Bank Ltd. | Loan Type | Home Loan | Original Amount | Rs. 52,00,000"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Priya Nair | Account Type | Savings | Average Monthly Balance | Rs. 4,20,000"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 801 | Score Band | Excellent | Total Active Accounts | 3"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Priya Nair | Employee ID | TST-EMP-2002 | Designation | Senior Manager \u2014 Finance"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:38:47.474776+00:00",
+      "question": "What existing loans or EMIs are mentioned in the documents?",
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:38:53.959381+00:00",
+      "question": "What existing loans or EMIs are mentioned in the documents?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully matches the provided contexts on the key loan details\u2014outstanding balance, EMI, interest rate, and remaining tenure\u2014and there are no contradictions."
+    }
+  },
+  {
+    "id": "TC04",
+    "category": "factual_extraction",
+    "question": "What is the average monthly balance shown in the bank statement?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe average monthly balance shown in the bank statement is \u20b94,20,000.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Average Monthly Balance: \u20b94,20,000\n\u2022 Opening Balance (Jan): \u20b93,80,000\n\u2022 Closing Balance (Mar): \u20b94,65,000\n\n\ud83d\udca1 **What This Means For You**\nThis average monthly balance indicates that you have maintained a significant amount of money in your savings account over the quarter. It suggests that you have a stable financial situation, with a growing account balance from \u20b93,80,000 to \u20b94,65,000. The average monthly balance is an important factor in determining the interest earned on your savings account.\n\n\u2705 **What You Can Do Next**\n1. Review your account activity to understand what contributed to the increase in your balance and consider ways to maintain or grow your savings.\n2. Consider speaking with a financial advisor to explore options for investing or utilizing your savings to achieve your long-term financial goals.",
+    "expected_answer": "",
+    "elapsed_seconds": 3.09,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Priya Nair | Account Type | Savings | Average Monthly Balance | Rs. 4,20,000"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statement \u2014 Home Loan | Loan Details | Lender | Test Bank Ltd. | Loan Type | Home Loan | Original Amount | Rs. 52,00,000"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 801 | Score Band | Excellent | Total Active Accounts | 3"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Priya Nair | Employee ID | TST-EMP-2002 | Designation | Senior Manager \u2014 Finance"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:39:00.888556+00:00",
+      "question": "What is the average monthly balance shown in the bank statement?",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:39:06.432721+00:00",
+      "question": "What is the average monthly balance shown in the bank statement?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with the provided context on the bank statement figures, correctly stating the average monthly balance, opening balance, and closing balance, and it does not contradict any other provided context."
+    }
+  },
+  {
+    "id": "TC05",
+    "category": "factual_extraction",
+    "question": "What is the credit card utilisation percentage reported?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe credit card utilisation percentage reported is 15%.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Credit Card Utilisation: 15%\n\u2022 Total Active Accounts: 3\n\u2022 Credit Score (CIBIL): 801\n\n\ud83d\udca1 **What This Means For You**\nThis means that you are using 15% of your available credit limit, which is a relatively low utilisation rate and is considered good for your credit score. A low credit utilisation rate indicates that you are able to manage your debt effectively. Your excellent credit score of 801 also reflects your good credit habits.\n\n\u2705 **What You Can Do Next**\n1. Continue to monitor your credit utilisation rate to ensure it remains low, as this will help you maintain a good credit score.\n2. Review your credit report regularly to check for any errors or discrepancies that may affect your credit score.",
+    "expected_answer": "",
+    "elapsed_seconds": 3.15,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 801 | Score Band | Excellent | Total Active Accounts | 3"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Priya Nair | Account Type | Savings | Average Monthly Balance | Rs. 4,20,000"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statement \u2014 Home Loan | Loan Details | Lender | Test Bank Ltd. | Loan Type | Home Loan | Original Amount | Rs. 52,00,000"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Priya Nair | Employee ID | TST-EMP-2002 | Designation | Senior Manager \u2014 Finance"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:39:12.137069+00:00",
+      "question": "What is the credit card utilisation percentage reported?",
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:39:18.043085+00:00",
+      "question": "What is the credit card utilisation percentage reported?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with the provided contexts, correctly stating 15% credit card utilisation, 3 total active accounts, and a credit score of 801, with no contradictions present."
+    }
+  },
+  {
+    "id": "TC06",
+    "category": "analytical",
+    "question": "Are there any overdue payments, defaults or late payments mentioned?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThere are no overdue payments, defaults, or late payments mentioned in the provided documents.\n\n\ud83d\udcca **Key Numbers**\n\u2022 \u20b942,000: Monthly EMI for the home loan, which is being paid on time\n\u2022 100%: On-time payment history for the last 36 months\n\u2022 No defaults: Mentioned in the repayment history of the home loan\n\n\ud83d\udca1 **What This Means For You**\nThis means you have a good payment history, which is beneficial for your credit score. The fact that you're paying your home loan EMI of \u20b942,000 on time and have a 100% on-time payment history for the last 36 months indicates responsible financial behavior. \n\n\u2705 **What You Can Do Next**\n1. Continue making timely payments to maintain a good credit score.\n2. Review your budget to ensure you can sustain these payments and make adjustments if needed.",
+    "expected_answer": "",
+    "elapsed_seconds": 2.88,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 801 | Score Band | Excellent | Total Active Accounts | 3"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statement \u2014 Home Loan | Loan Details | Lender | Test Bank Ltd. | Loan Type | Home Loan | Original Amount | Rs. 52,00,000"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Priya Nair | Account Type | Savings | Average Monthly Balance | Rs. 4,20,000"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Priya Nair | Employee ID | TST-EMP-2002 | Designation | Senior Manager \u2014 Finance"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:39:23.412323+00:00",
+      "question": "Are there any overdue payments, defaults or late payments mentioned?",
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:39:30.162119+00:00",
+      "question": "Are there any overdue payments, defaults or late payments mentioned?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output is fully supported by the provided contexts: all listed facts align with on-time home loan EMI payments of Rs. 42,000 and no contradictions are present."
+    }
+  },
+  {
+    "id": "TC07",
+    "category": "factual_extraction",
+    "question": "What is the monthly income and what are the monthly expenses shown?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe monthly income is \u20b91,49,900, and the monthly expenses include \u20b942,000 for a home loan EMI and \u20b958,000 for other expenses, as shown in the bank statement for Q1 2026.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Monthly income: \u20b91,49,900\n\u2022 Home loan EMI: \u20b942,000\n\u2022 Other monthly expenses: \u20b958,000\n\u2022 Average monthly savings: \u20b949,900\n\n\ud83d\udca1 **What This Means For You**\nYour monthly income is \u20b91,49,900, which is also your take-home salary, and you have regular monthly expenses like your home loan EMI and other expenses. You are also managing to save \u20b949,900 on average each month. This suggests you have a stable financial situation with a balance between income, expenses, and savings.\n\n\u2705 **What You Can Do Next**\n1. Review your budget to see if there are any areas where you can cut back on expenses to save even more.\n2. Consider setting financial goals, such as paying off your home loan early or building up your savings for a specific purpose.",
+    "expected_answer": "",
+    "elapsed_seconds": 3.18,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Priya Nair | Account Type | Savings | Average Monthly Balance | Rs. 4,20,000"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Priya Nair | Employee ID | TST-EMP-2002 | Designation | Senior Manager \u2014 Finance"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statement \u2014 Home Loan | Loan Details | Lender | Test Bank Ltd. | Loan Type | Home Loan | Original Amount | Rs. 52,00,000"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 801 | Score Band | Excellent | Total Active Accounts | 3"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:39:36.097467+00:00",
+      "question": "What is the monthly income and what are the monthly expenses shown?",
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:39:41.656829+00:00",
+      "question": "What is the monthly income and what are the monthly expenses shown?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with the provided contexts: the income, home loan EMI, expenses, and savings figures all match, and there are no contradictions."
+    }
+  },
+  {
+    "id": "TC08",
+    "category": "factual_extraction",
+    "question": "What is the employer name and designation mentioned in the salary slip?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe employer name is not mentioned in the salary slip, but the designation is Senior Manager \u2014 Finance.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Employee ID: TST-EMP-2002\n\u2022 Designation: Senior Manager \u2014 Finance\n\u2022 Department: Finance\n\n\ud83d\udca1 **What This Means For You**\nThe salary slip provides important details about your employment, including your role and department. However, it does not mention the employer's name. This information can be useful for personal records and future job applications. The designation as Senior Manager \u2014 Finance indicates a leadership role in the finance department.\n\n\u2705 **What You Can Do Next**\n1. Review your salary slip for accuracy and completeness.\n2. Keep a copy of your salary slip for personal records and future reference.",
+    "expected_answer": "",
+    "elapsed_seconds": 2.95,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Priya Nair | Employee ID | TST-EMP-2002 | Designation | Senior Manager \u2014 Finance"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Priya Nair | Account Type | Savings | Average Monthly Balance | Rs. 4,20,000"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statement \u2014 Home Loan | Loan Details | Lender | Test Bank Ltd. | Loan Type | Home Loan | Original Amount | Rs. 52,00,000"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 801 | Score Band | Excellent | Total Active Accounts | 3"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:39:48.307271+00:00",
+      "question": "What is the employer name and designation mentioned in the salary slip?",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.5,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:39:54.798508+00:00",
+      "question": "What is the employer name and designation mentioned in the salary slip?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with the provided context: the salary slip supports the designation, employee ID, and department, and no context contradicts the claim that the employer name is not mentioned."
+    }
+  },
+  {
+    "id": "TC09",
+    "category": "negative_test",
+    "question": "What is the current stock price of this person?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThis information is not available in your uploaded documents.\n\n\ud83d\udcca **Key Numbers**\n\u2022 No stock price information is available\n\u2022 The documents provided are related to salary, bank statement, loan statement, and credit score report\n\n\ud83d\udca1 **What This Means For You**\nThe uploaded documents do not contain any information about stock prices, as they are related to personal finance and credit reports. If you are looking for stock price information, you may need to check a different source.\n\n\u2705 **What You Can Do Next**\n1. Check a financial news website or a stock market platform for the current stock price of the company you are interested in.\n2. If you have invested in stocks, review your investment portfolio to see if it includes the company you are looking for.",
+    "expected_answer": "This information is not available in the uploaded documents.",
+    "elapsed_seconds": 2.94,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Priya Nair | Employee ID | TST-EMP-2002 | Designation | Senior Manager \u2014 Finance"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Priya Nair | Account Type | Savings | Average Monthly Balance | Rs. 4,20,000"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statement \u2014 Home Loan | Loan Details | Lender | Test Bank Ltd. | Loan Type | Home Loan | Original Amount | Rs. 52,00,000"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 801 | Score Band | Excellent | Total Active Accounts | 3"
+      }
+    ],
+    "chunks_count": 4,
+    "correctly_refused": true,
+    "ragas": {
+      "timestamp": "2026-07-02T05:39:59.604784+00:00",
+      "question": "What is the current stock price of this person?",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.5,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:40:04.522873+00:00",
+      "question": "What is the current stock price of this person?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with all provided contexts, correctly identifying salary, bank, loan, and credit score documents, and there are no contradictions or unsupported claims."
+    }
+  },
+  {
+    "id": "TC10",
+    "category": "negative_test",
+    "question": "What is the Aadhar card number and PAN card number of this person?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThis information is not available in your uploaded documents.\n\n\ud83d\udcca **Key Numbers**\n\u2022 No relevant numbers are available for this question.\n\n\ud83d\udca1 **What This Means For You**\nThe documents provided do not contain the Aadhar card number or PAN card number of the individual. This information is typically considered sensitive and may be included in other personal or financial documents not provided here. \n\n\u2705 **What You Can Do Next**\n1. Check other personal documents, such as identification cards or tax returns, for the Aadhar card number and PAN card number.\n2. If necessary, contact the relevant authorities or institutions to obtain or verify this information.",
+    "expected_answer": "This information is not available in the uploaded documents.",
+    "elapsed_seconds": 2.67,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Priya Nair | Account Type | Savings | Average Monthly Balance | Rs. 4,20,000"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Priya Nair | Employee ID | TST-EMP-2002 | Designation | Senior Manager \u2014 Finance"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 801 | Score Band | Excellent | Total Active Accounts | 3"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statement \u2014 Home Loan | Loan Details | Lender | Test Bank Ltd. | Loan Type | Home Loan | Original Amount | Rs. 52,00,000"
+      }
+    ],
+    "chunks_count": 4,
+    "correctly_refused": true,
+    "ragas": {
+      "timestamp": "2026-07-02T05:40:10.271593+00:00",
+      "question": "What is the Aadhar card number and PAN card number of this person?",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:40:15.533073+00:00",
+      "question": "What is the Aadhar card number and PAN card number of this person?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output is fully supported by all provided contexts: none of the documents mention an Aadhar card number or PAN card number, and there are no contradictions."
+    }
+  }
+]

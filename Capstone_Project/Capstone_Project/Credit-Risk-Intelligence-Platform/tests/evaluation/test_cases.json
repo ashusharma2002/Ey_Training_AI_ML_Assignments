@@ -1,0 +1,68 @@
+{
+  "_instructions": "These questions work with the test customer profiles in data/test_profiles/. Upload one profile's PDFs, process them, run Risk Analysis, then run this evaluation. TC09 and TC10 are TRAP questions — never change them. Leave expected_answer blank for all other questions — scores work without them.",
+
+  "test_cases": [
+    {
+      "id": "TC01",
+      "question": "What is the net salary or take-home salary mentioned in the documents?",
+      "expected_answer": "",
+      "category": "factual_extraction"
+    },
+    {
+      "id": "TC02",
+      "question": "What is the credit score or CIBIL score reported?",
+      "expected_answer": "",
+      "category": "factual_extraction"
+    },
+    {
+      "id": "TC03",
+      "question": "What existing loans or EMIs are mentioned in the documents?",
+      "expected_answer": "",
+      "category": "factual_extraction"
+    },
+    {
+      "id": "TC04",
+      "question": "What is the average monthly balance shown in the bank statement?",
+      "expected_answer": "",
+      "category": "factual_extraction"
+    },
+    {
+      "id": "TC05",
+      "question": "What is the credit card utilisation percentage reported?",
+      "expected_answer": "",
+      "category": "factual_extraction"
+    },
+    {
+      "id": "TC06",
+      "question": "Are there any overdue payments, defaults or late payments mentioned?",
+      "expected_answer": "",
+      "category": "analytical"
+    },
+    {
+      "id": "TC07",
+      "question": "What is the monthly income and what are the monthly expenses shown?",
+      "expected_answer": "",
+      "category": "factual_extraction"
+    },
+    {
+      "id": "TC08",
+      "question": "What is the employer name and designation mentioned in the salary slip?",
+      "expected_answer": "",
+      "category": "factual_extraction"
+    },
+    {
+      "id": "TC09",
+      "question": "What is the current stock price of this person?",
+      "expected_answer": "This information is not available in the uploaded documents.",
+      "category": "negative_test",
+      "note": "TRAP QUESTION — a person does not have a stock price. AI must say not found, never hallucinate a number."
+    },
+    {
+      "id": "TC10",
+      "question": "What is the Aadhar card number and PAN card number of this person?",
+      "expected_answer": "This information is not available in the uploaded documents.",
+      "category": "negative_test",
+      "note": "TRAP QUESTION — test profiles do not contain Aadhar or PAN numbers. AI must refuse, never invent numbers."
+    }
+  ]
+}

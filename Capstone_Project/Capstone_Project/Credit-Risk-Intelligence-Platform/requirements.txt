@@ -1,0 +1,71 @@
+# requirements.txt — Credit Risk Intelligence Platform v3.1
+# ============================================================
+# All versions verified for compatibility with each other.
+# Tested chain: openai 2.x + langchain 0.3.x + pinecone 6.x
+#
+# KEY FACTS:
+# - openai 2.x (not 1.x) — user machine has 2.44.0
+# - langchain-openai 0.3.35+ supports openai >=1.104.2,<3.0.0 (covers 2.x)
+# - pinecone NEW package (not pinecone-client) required by langchain-pinecone 0.2.x
+# - langchain-pinecone 0.2.x requires langchain-core <1.0.0 (stays on 0.3.x)
+# ============================================================
+
+# ── Core Framework ────────────────────────────────────────────────────────────
+streamlit>=1.35.0,<2.0.0
+
+# ── Groq (Primary LLM) ───────────────────────────────────────────────────────
+langchain-groq>=0.2.0
+
+# ── LangChain 0.3.x stack — fully compatible with each other ─────────────────
+langchain==0.3.30
+langchain-core>=0.3.85,<1.0.0
+langchain-community>=0.3.0,<0.4.0
+langchain-text-splitters>=0.3.0,<0.4.0
+langchain-google-genai>=2.0.0,<3.0.0
+langchain-openai>=0.3.35,<0.4.0
+
+# ── OpenAI v2.x — compatible with langchain-openai 0.3.35+ ───────────────────
+openai>=2.26.0,<3.0.0
+
+# ── Pinecone NEW SDK v6 — required by langchain-pinecone 0.2.x ───────────────
+# IMPORTANT: use "pinecone" NOT "pinecone-client"
+# pinecone-client is the old v3 SDK — incompatible with langchain-pinecone 0.2.x
+pinecone>=6.0.0,<8.0.0
+langchain-pinecone>=0.2.0,<1.0.0
+
+# ── Vector Store (local fallback) ─────────────────────────────────────────────
+faiss-cpu>=1.7.4,<2.0.0
+
+# ── Settings / Config ─────────────────────────────────────────────────────────
+pydantic>=2.7.0,<3.0.0
+pydantic-settings>=2.3.0,<3.0.0
+email-validator>=2.1.0
+python-dotenv>=1.0.0
+
+# ── Authentication ─────────────────────────────────────────────────────────────
+bcrypt>=4.1.0
+PyJWT>=2.8.0
+
+# ── PDF Processing ────────────────────────────────────────────────────────────
+PyMuPDF>=1.24.0
+pypdf>=4.2.0
+reportlab>=4.1.0
+
+# ── Charting & Visualisation ──────────────────────────────────────────────────
+plotly>=5.22.0
+
+# ── Hybrid Search ─────────────────────────────────────────────────────────────
+rank-bm25>=0.2.2
+
+# ── FastAPI (optional REST API layer) ─────────────────────────────────────────
+fastapi>=0.111.0,<1.0.0
+uvicorn[standard]>=0.30.0,<1.0.0
+python-multipart>=0.0.9
+
+# ── LangSmith Observability ───────────────────────────────────────────────────
+langsmith>=0.1.0
+
+# ── Utilities ────────────────────────────────────────────────────────────────
+numpy>=1.26.4
+python-dateutil>=2.9.0
+tiktoken>=0.7.0,<1.0.0

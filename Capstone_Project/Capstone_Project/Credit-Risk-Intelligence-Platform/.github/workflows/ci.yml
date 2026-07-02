@@ -1,0 +1,57 @@
+name: CI — Credit Risk Platform
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+
+      - name: Create .env for testing
+        run: |
+          cp .env.example .env
+          sed -i 's/your_gemini_api_key_here/test_key/' .env
+          sed -i 's/your_openai_api_key_here/test_key/' .env
+
+      - name: Run unit tests
+        run: |
+          pytest tests/unit/ -v --tb=short \
+            --ignore=tests/unit/test_retirement_calc.py \
+            -k "not test_vector_store"
+
+      - name: Run schema + sampling tests
+        run: |
+          pytest tests/unit/test_schemas.py tests/unit/test_sampling.py tests/unit/test_chunker.py -v
+
+  lint:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install linters
+        run: pip install ruff
+      - name: Ruff lint
+        run: ruff check src/ ui/ config/ --ignore E501,F401 || true

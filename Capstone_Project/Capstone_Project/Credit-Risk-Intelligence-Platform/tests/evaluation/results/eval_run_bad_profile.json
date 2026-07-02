@@ -1,0 +1,464 @@
+[
+  {
+    "id": "TC01",
+    "category": "factual_extraction",
+    "question": "What is the net salary or take-home salary mentioned in the documents?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe net salary or take-home salary mentioned in the documents is \u20b925,640.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Net Salary (Take Home): \u20b925,640\n\u2022 Gross Salary: \u20b928,000\n\u2022 Deductions: \u20b92,360 (including Provident Fund, Professional Tax, and no Income Tax)\n\n\ud83d\udca1 **What This Means For You**\nThis is the amount of money you take home after all deductions from your salary. It's the actual amount you receive in your bank account. Your gross salary is \u20b928,000, but after deductions, you're left with \u20b925,640. This is an important number to know when planning your expenses and budget.\n\n\u2705 **What You Can Do Next**\n1. Review your expenses to ensure they are within your means, given your take-home salary.\n2. Consider creating a budget to manage your finances effectively and make the most of your net salary.",
+    "expected_answer": "",
+    "elapsed_seconds": 3.79,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Deepak Sharma | Employee ID | TST-EMP-5001 | Designation | Data Entry Operator"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Deepak Sharma | Account Type | Savings | Average Monthly Balance | Rs. 2,100 (frequently dips below Rs. 500)"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statements \u2014 Combined | Loan 1 \u2014 Personal Loan (Overdue) | Lender | Test NBFC Pvt. Ltd. | Original Amount | Rs. 3,00,000 | Outstanding Balance | Rs. 1,80,000"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 511 | Score Band | Poor \u2014 High Risk | Total Active Accounts | 5"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:30:52.791183+00:00",
+      "question": "What is the net salary or take-home salary mentioned in the documents?",
+      "faithfulness": 0.5,
+      "answer_relevancy": 1.0,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:31:00.986962+00:00",
+      "question": "What is the net salary or take-home salary mentioned in the documents?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with the provided contexts: the salary, deductions, and take-home figures match exactly, and the additional budgeting advice does not contradict any context."
+    }
+  },
+  {
+    "id": "TC02",
+    "category": "factual_extraction",
+    "question": "What is the credit score or CIBIL score reported?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe credit score or CIBIL score reported is 511, which falls into the \"Poor \u2014 High Risk\" score band.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Credit Score (CIBIL): 511\n\u2022 Score Band: Poor \u2014 High Risk\n\u2022 Total Active Accounts: 5\n\n\ud83d\udca1 **What This Means For You**\nA credit score of 511 indicates that you have a high risk of defaulting on loans, which can make it difficult to get approved for new credit. This score is likely due to the multiple defaults and late payments listed in your credit history. Having a \"Poor \u2014 High Risk\" score band means that lenders may view you as a high-risk borrower.\n\n\u2705 **What You Can Do Next**\n1. Review your credit report to identify areas for improvement, such as paying off overdue loans and reducing credit card utilization.\n2. Consider working on rebuilding your credit score by making timely payments and reducing debt to improve your creditworthiness.",
+    "expected_answer": "",
+    "elapsed_seconds": 3.45,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 511 | Score Band | Poor \u2014 High Risk | Total Active Accounts | 5"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Deepak Sharma | Account Type | Savings | Average Monthly Balance | Rs. 2,100 (frequently dips below Rs. 500)"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statements \u2014 Combined | Loan 1 \u2014 Personal Loan (Overdue) | Lender | Test NBFC Pvt. Ltd. | Original Amount | Rs. 3,00,000 | Outstanding Balance | Rs. 1,80,000"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Deepak Sharma | Employee ID | TST-EMP-5001 | Designation | Data Entry Operator"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:31:08.019625+00:00",
+      "question": "What is the credit score or CIBIL score reported?",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.5,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:31:13.714381+00:00",
+      "question": "What is the credit score or CIBIL score reported?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output is fully supported by the provided contexts: the credit/CIBIL score of 511, the 'Poor \u2014 High Risk' band, and the explanation about defaults, late payments, overdue loans, and repayment issues all align with the evidence, with no contradictions identified."
+    }
+  },
+  {
+    "id": "TC03",
+    "category": "factual_extraction",
+    "question": "What existing loans or EMIs are mentioned in the documents?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe documents mention three existing loans: a Personal Loan, a Two-Wheeler Loan, and a Consumer Durable Loan, with outstanding balances of \u20b91,80,000, \u20b968,000, and \u20b942,000 respectively, from the existing_loan_statement.pdf document.\n\n\ud83d\udcca **Key Numbers**\n\u2022 \u20b91,80,000: Outstanding balance of the Personal Loan\n\u2022 \u20b968,000: Outstanding balance of the Two-Wheeler Loan\n\u2022 \u20b942,000: Outstanding balance of the Consumer Durable Loan\n\u2022 \u20b98,500: Monthly EMI for the Personal Loan\n\u2022 \u20b94,200: Monthly EMI for the Two-Wheeler Loan\n\u2022 \u20b93,300: Monthly EMI for the Consumer Durable Loan\n\n\ud83d\udca1 **What This Means For You**\nThese loans have outstanding balances that need to be repaid, and the monthly EMIs are deducted from your account. The Personal Loan and Two-Wheeler Loan are overdue, which may affect your credit score. The Consumer Durable Loan is current, but only minimum payments are being made. \nThe total monthly EMI payments (\u20b98,500 + \u20b94,200 + \u20b93,300 = \u20b916,000) are a significant expense, and you may want to review your budget to ensure you can manage these payments.\n\n\u2705 **What You Can Do Next**\n1. Review your budget to prioritize debt repayment and ensure timely EMI payments.\n2. Consider negotiating with your lenders to restructure your loans or reduce interest rates, if possible, to make your debt more manageable.",
+    "expected_answer": "",
+    "elapsed_seconds": 2.25,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statements \u2014 Combined | Loan 1 \u2014 Personal Loan (Overdue) | Lender | Test NBFC Pvt. Ltd. | Original Amount | Rs. 3,00,000 | Outstanding Balance | Rs. 1,80,000"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Deepak Sharma | Account Type | Savings | Average Monthly Balance | Rs. 2,100 (frequently dips below Rs. 500)"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 511 | Score Band | Poor \u2014 High Risk | Total Active Accounts | 5"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Deepak Sharma | Employee ID | TST-EMP-5001 | Designation | Data Entry Operator"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:31:18.487204+00:00",
+      "question": "What existing loans or EMIs are mentioned in the documents?",
+      "faithfulness": 0.5,
+      "answer_relevancy": 1.0,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:31:25.536569+00:00",
+      "question": "What existing loans or EMIs are mentioned in the documents?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with the provided contexts on the loans, balances, EMIs, overdue/current statuses, and EMI deductions, and there are no contradictions."
+    }
+  },
+  {
+    "id": "TC04",
+    "category": "factual_extraction",
+    "question": "What is the average monthly balance shown in the bank statement?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe average monthly balance shown in the bank statement is \u20b92,100.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Average Monthly Balance: \u20b92,100\n\u2022 Opening Balance (Jan): \u20b93,200\n\u2022 Closing Balance (Mar): \u20b9890\n\n\ud83d\udca1 **What This Means For You**\nThis average monthly balance indicates that your account balance has been fluctuating, and it often dips below \u20b9500. This could lead to minimum balance penalty charges, as seen in your statement. It's essential to maintain a stable balance to avoid such charges.\n\n\u2705 **What You Can Do Next**\n1. Review your monthly expenses and income to identify areas where you can adjust to maintain a more stable account balance.\n2. Consider setting up a budget or automatic transfers to ensure you have a cushion in your account to avoid dipping below the minimum balance threshold.",
+    "expected_answer": "",
+    "elapsed_seconds": 2.3,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Deepak Sharma | Account Type | Savings | Average Monthly Balance | Rs. 2,100 (frequently dips below Rs. 500)"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statements \u2014 Combined | Loan 1 \u2014 Personal Loan (Overdue) | Lender | Test NBFC Pvt. Ltd. | Original Amount | Rs. 3,00,000 | Outstanding Balance | Rs. 1,80,000"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 511 | Score Band | Poor \u2014 High Risk | Total Active Accounts | 5"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Deepak Sharma | Employee ID | TST-EMP-5001 | Designation | Data Entry Operator"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:31:30.236880+00:00",
+      "question": "What is the average monthly balance shown in the bank statement?",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.5,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:31:35.418774+00:00",
+      "question": "What is the average monthly balance shown in the bank statement?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with the provided contexts, correctly reflects the bank balance details, and contains no contradictions or unsupported claims."
+    }
+  },
+  {
+    "id": "TC05",
+    "category": "factual_extraction",
+    "question": "What is the credit card utilisation percentage reported?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe credit card utilisation percentage reported is 91%.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Credit card limit: \u20b91,00,000\n\u2022 Amount used: \u20b991,000\n\u2022 Utilisation percentage: 91%\n\n\ud83d\udca1 **What This Means For You**\nThis high utilisation percentage indicates that you are using a significant portion of your available credit, which can negatively impact your credit score. It suggests that you may be relying too heavily on credit and could be at risk of accumulating debt. \n\n\u2705 **What You Can Do Next**\n1. Try to reduce your credit card usage to lower your utilisation percentage, aiming for 30% or less of your available credit.\n2. Consider paying off some of the outstanding balance to free up more of your credit limit and improve your credit utilisation ratio.",
+    "expected_answer": "",
+    "elapsed_seconds": 2.03,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 511 | Score Band | Poor \u2014 High Risk | Total Active Accounts | 5"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Deepak Sharma | Account Type | Savings | Average Monthly Balance | Rs. 2,100 (frequently dips below Rs. 500)"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statements \u2014 Combined | Loan 1 \u2014 Personal Loan (Overdue) | Lender | Test NBFC Pvt. Ltd. | Original Amount | Rs. 3,00,000 | Outstanding Balance | Rs. 1,80,000"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Deepak Sharma | Employee ID | TST-EMP-5001 | Designation | Data Entry Operator"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:31:39.594815+00:00",
+      "question": "What is the credit card utilisation percentage reported?",
+      "faithfulness": 0.8,
+      "answer_relevancy": 1.0,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:31:45.057661+00:00",
+      "question": "What is the credit card utilisation percentage reported?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output is fully supported by the context stating 91% credit card utilisation (Rs. 91,000 used out of Rs. 1,00,000), and there are no contradictions."
+    }
+  },
+  {
+    "id": "TC06",
+    "category": "analytical",
+    "question": "Are there any overdue payments, defaults or late payments mentioned?",
+    "answer": "\ud83d\udccb **Quick Answer**\nYes, there are overdue payments, defaults, and late payments mentioned in the documents.\n\n\ud83d\udcca **Key Numbers**\n\u2022 2 EMIs missed for Loan 1 (Personal Loan) as of 2026\n\u2022 1 EMI missed for Loan 2 (Two-Wheeler Loan) as of 2026\n\u2022 2 defaults in the last 12 months\n\u2022 5 late payments in the last 24 months\n\u2022 62 days past due for Loan 1\n\u2022 28 days past due for Loan 2\n\n\ud83d\udca1 **What This Means For You**\nThese overdue payments, defaults, and late payments can negatively affect your credit score and make it harder to get loans or credit in the future. It's essential to address these issues as soon as possible to avoid further damage to your credit history. The fact that you have missed payments and have a high debt-to-income ratio indicates that you may need to review your budget and adjust your spending habits.\n\n\u2705 **What You Can Do Next**\n1. Prioritize paying off the overdue EMIs for Loan 1 and Loan 2 to avoid additional late fees and interest charges.\n2. Review your budget and expenses to identify areas where you can cut back and allocate more funds towards debt repayment and building an emergency fund to avoid future late payments.",
+    "expected_answer": "",
+    "elapsed_seconds": 2.68,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statements \u2014 Combined | Loan 1 \u2014 Personal Loan (Overdue) | Lender | Test NBFC Pvt. Ltd. | Original Amount | Rs. 3,00,000 | Outstanding Balance | Rs. 1,80,000"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 511 | Score Band | Poor \u2014 High Risk | Total Active Accounts | 5"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Deepak Sharma | Account Type | Savings | Average Monthly Balance | Rs. 2,100 (frequently dips below Rs. 500)"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Deepak Sharma | Employee ID | TST-EMP-5001 | Designation | Data Entry Operator"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:31:49.932074+00:00",
+      "question": "Are there any overdue payments, defaults or late payments mentioned?",
+      "faithfulness": 0.8,
+      "answer_relevancy": 1.0,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:31:55.988923+00:00",
+      "question": "Are there any overdue payments, defaults or late payments mentioned?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with the provided contexts, including the missed EMIs, days past due, defaults, late payments, and financial stress indicators, with no contradictions identified."
+    }
+  },
+  {
+    "id": "TC07",
+    "category": "factual_extraction",
+    "question": "What is the monthly income and what are the monthly expenses shown?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe monthly income is \u20b925,640, and the monthly expenses include various loan EMIs, rent, and other expenses, totaling more than the income, resulting in a negative net monthly surplus.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Monthly income: \u20b925,640\n\u2022 Avg. Monthly Debit (EMI \u2014 Personal Loan 1): \u20b98,500\n\u2022 Avg. Monthly Debit (EMI \u2014 Two-Wheeler Loan): \u20b94,200\n\u2022 Avg. Monthly Debit (EMI \u2014 Consumer Durable Loan): \u20b93,300\n\u2022 Avg. Monthly Debit (Rent): \u20b96,500\n\u2022 Avg. Monthly Debit (Other expenses): \u20b95,000\n\u2022 Net Monthly Surplus: -\u20b91,860 (negative)\n\n\ud83d\udca1 **What This Means For You**\nYour monthly expenses, including loan repayments and living costs, exceed your monthly income, leading to a negative net monthly surplus. This means you are spending more than you earn, which can lead to financial difficulties and debt accumulation. It's essential to review and adjust your budget to ensure you can meet your financial obligations.\n\n\u2705 **What You Can Do Next**\n1. Review your budget and identify areas where you can reduce expenses to balance your income and outgoings.\n2. Consider negotiating with your lenders to temporarily reduce or defer loan payments to help manage your debt burden.",
+    "expected_answer": "",
+    "elapsed_seconds": 2.76,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Deepak Sharma | Account Type | Savings | Average Monthly Balance | Rs. 2,100 (frequently dips below Rs. 500)"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statements \u2014 Combined | Loan 1 \u2014 Personal Loan (Overdue) | Lender | Test NBFC Pvt. Ltd. | Original Amount | Rs. 3,00,000 | Outstanding Balance | Rs. 1,80,000"
+      },
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Deepak Sharma | Employee ID | TST-EMP-5001 | Designation | Data Entry Operator"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 511 | Score Band | Poor \u2014 High Risk | Total Active Accounts | 5"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:32:02.476575+00:00",
+      "question": "What is the monthly income and what are the monthly expenses shown?",
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:32:08.238417+00:00",
+      "question": "What is the monthly income and what are the monthly expenses shown?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with the provided contexts on income, EMI amounts, expenses, and the negative monthly surplus, with no contradictions identified."
+    }
+  },
+  {
+    "id": "TC08",
+    "category": "factual_extraction",
+    "question": "What is the employer name and designation mentioned in the salary slip?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThe employer name is not mentioned in the salary slip, but the designation is Data Entry Operator.\n\n\ud83d\udcca **Key Numbers**\n\u2022 Employee ID: TST-EMP-5001\n\u2022 Designation: Data Entry Operator\n\u2022 Department: Operations\n\n\ud83d\udca1 **What This Means For You**\nThe salary slip provides important details about your employment, including your role and department. However, it does not mention the employer's name. This information can be useful for verifying your employment status or updating your professional records. The employee ID can be used to access company resources or benefits.\n\n\u2705 **What You Can Do Next**\n1. Review your salary slip to ensure all details are accurate and up-to-date.\n2. If you need to verify your employment, you may want to contact your HR department to obtain a separate document that includes the employer's name.",
+    "expected_answer": "",
+    "elapsed_seconds": 2.29,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Deepak Sharma | Employee ID | TST-EMP-5001 | Designation | Data Entry Operator"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Deepak Sharma | Account Type | Savings | Average Monthly Balance | Rs. 2,100 (frequently dips below Rs. 500)"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statements \u2014 Combined | Loan 1 \u2014 Personal Loan (Overdue) | Lender | Test NBFC Pvt. Ltd. | Original Amount | Rs. 3,00,000 | Outstanding Balance | Rs. 1,80,000"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 511 | Score Band | Poor \u2014 High Risk | Total Active Accounts | 5"
+      }
+    ],
+    "chunks_count": 4,
+    "ragas": {
+      "timestamp": "2026-07-02T05:32:12.817571+00:00",
+      "question": "What is the employer name and designation mentioned in the salary slip?",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.5,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:32:17.895174+00:00",
+      "question": "What is the employer name and designation mentioned in the salary slip?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output fully aligns with the provided contexts: it correctly reflects the salary slip details and does not contradict the bank statement, loan statement, or credit score report."
+    }
+  },
+  {
+    "id": "TC09",
+    "category": "negative_test",
+    "question": "What is the current stock price of this person?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThis information is not available in your uploaded documents.\n\n\ud83d\udcca **Key Numbers**\n\u2022 No stock price information is available\n\u2022 The documents provided are related to salary, bank statement, credit score, and loan statements, but do not mention stock prices\n\n\ud83d\udca1 **What This Means For You**\nThe documents you've uploaded do not contain any information about stock prices, so we can't determine the current stock price of any particular company or investment. This is because the documents are focused on personal finance, credit, and loan information.\n\n\u2705 **What You Can Do Next**\n1. If you're looking for stock price information, you may want to check a financial website or consult with a financial advisor who has access to the relevant data.\n2. Review your personal finance documents to understand your current financial situation and make informed decisions about your investments and loans.",
+    "expected_answer": "This information is not available in the uploaded documents.",
+    "elapsed_seconds": 2.17,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Deepak Sharma | Employee ID | TST-EMP-5001 | Designation | Data Entry Operator"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Deepak Sharma | Account Type | Savings | Average Monthly Balance | Rs. 2,100 (frequently dips below Rs. 500)"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 511 | Score Band | Poor \u2014 High Risk | Total Active Accounts | 5"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statements \u2014 Combined | Loan 1 \u2014 Personal Loan (Overdue) | Lender | Test NBFC Pvt. Ltd. | Original Amount | Rs. 3,00,000 | Outstanding Balance | Rs. 1,80,000"
+      }
+    ],
+    "chunks_count": 4,
+    "correctly_refused": true,
+    "ragas": {
+      "timestamp": "2026-07-02T05:32:22.298193+00:00",
+      "question": "What is the current stock price of this person?",
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:32:27.336415+00:00",
+      "question": "What is the current stock price of this person?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output is fully consistent with all provided contexts: they contain salary, banking, credit, and loan information, and none include stock price data. There are no contradictions."
+    }
+  },
+  {
+    "id": "TC10",
+    "category": "negative_test",
+    "question": "What is the Aadhar card number and PAN card number of this person?",
+    "answer": "\ud83d\udccb **Quick Answer**\nThis information is not available in your uploaded documents.\n\n\ud83d\udcca **Key Numbers**\n\u2022 None available for Aadhar card number and PAN card number\n\n\ud83d\udca1 **What This Means For You**\nThe documents provided do not contain sensitive information like Aadhar card numbers or PAN card numbers, which are typically kept private for security reasons. This is a good practice to protect your identity.\n\n\u2705 **What You Can Do Next**\n1. Check other personal documents, such as your Aadhar card or PAN card, to find these numbers if you need them for any applications or verifications.\n2. Keep your sensitive information secure and only share it when necessary, to prevent identity theft or other security issues.",
+    "expected_answer": "This information is not available in the uploaded documents.",
+    "elapsed_seconds": 2.08,
+    "status": "COMPLETED",
+    "retrieved_chunks": [
+      {
+        "source": "salary_slip.pdf",
+        "page": "?",
+        "text": "Salary Slip \u2014 March 2026 | Employee Details | Name | Deepak Sharma | Employee ID | TST-EMP-5001 | Designation | Data Entry Operator"
+      },
+      {
+        "source": "bank_statement.pdf",
+        "page": "?",
+        "text": "Bank Statement Summary \u2014 Q1 2026 | Account Summary | Account Holder | Deepak Sharma | Account Type | Savings | Average Monthly Balance | Rs. 2,100 (frequently dips below Rs. 500)"
+      },
+      {
+        "source": "credit_score_report.pdf",
+        "page": "?",
+        "text": "Credit Score Report | Credit Summary | Credit Score (CIBIL) | 511 | Score Band | Poor \u2014 High Risk | Total Active Accounts | 5"
+      },
+      {
+        "source": "existing_loan_statement.pdf",
+        "page": "?",
+        "text": "Existing Loan Statements \u2014 Combined | Loan 1 \u2014 Personal Loan (Overdue) | Lender | Test NBFC Pvt. Ltd. | Original Amount | Rs. 3,00,000 | Outstanding Balance | Rs. 1,80,000"
+      }
+    ],
+    "chunks_count": 4,
+    "correctly_refused": true,
+    "ragas": {
+      "timestamp": "2026-07-02T05:32:32.725445+00:00",
+      "question": "What is the Aadhar card number and PAN card number of this person?",
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.5,
+      "n_contexts": 4
+    },
+    "deepeval": {
+      "timestamp": "2026-07-02T05:32:38.612017+00:00",
+      "question": "What is the Aadhar card number and PAN card number of this person?",
+      "hallucination_score": 0.0,
+      "is_grounded": true,
+      "reason": "The score is 0.00 because the actual output is fully supported by all provided contexts: each document mentions only financial or employment details and none contains an Aadhaar card number or PAN card number, with no contradictions present."
+    }
+  }
+]
