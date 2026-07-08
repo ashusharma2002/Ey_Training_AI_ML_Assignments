@@ -31,3 +31,4 @@ results/*.json
 build/
 dist/
 CLEANUP.md
+node_modules/
