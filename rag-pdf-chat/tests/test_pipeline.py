@@ -9,7 +9,7 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
 
-from chunk import chunk_text
+from text_chunker import chunk_text
 
 
 def test_chunk_text_basic():
