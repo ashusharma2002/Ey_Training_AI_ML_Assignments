@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 env:
-  AZURE_WEBAPP_NAME: your-app-name          # TODO: replace with your Azure App Service name
+  AZURE_WEBAPP_NAME: rag-pdf-chat         # TODO: replace with your Azure App Service name
   REGISTRY: yourregistry.azurecr.io          # TODO: replace with your ACR login server
   IMAGE_NAME: rag-pdf-chat
 
